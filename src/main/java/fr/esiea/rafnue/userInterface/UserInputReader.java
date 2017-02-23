@@ -1,4 +1,4 @@
-package fr.esiea.rafnue.infra;
+package fr.esiea.rafnue.userInterface;
 
 /**
  * Interface pour la lecture des données utilisateurs 

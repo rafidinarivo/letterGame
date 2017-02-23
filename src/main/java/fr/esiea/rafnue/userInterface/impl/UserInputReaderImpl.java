@@ -1,9 +1,9 @@
-package fr.esiea.rafnue.infra.impl;
+package fr.esiea.rafnue.userInterface.impl;
 
 import java.util.NoSuchElementException;
 import java.util.Scanner;
 
-import fr.esiea.rafnue.infra.UserInputReader;
+import fr.esiea.rafnue.userInterface.UserInputReader;
 
 /**
  * Implementation par defaut
