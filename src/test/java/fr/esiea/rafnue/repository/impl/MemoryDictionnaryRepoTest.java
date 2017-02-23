@@ -25,9 +25,9 @@ public class MemoryDictionnaryRepoTest {
 	@Test
 	public void testNeContientPas() {
 		MemoryDictionnaryRepo dico = MemoryDictionnaryRepo.getInstance();
-		String motExistant = "zzzzzzzzzzzz";
-		boolean exist = dico.contient(motExistant);
-		Assert.assertFalse("Le mot " + motExistant + " ne devrait pas exister dans le dictionnaire", exist);
+		String motInexistant = "zzzzzzzzzzzz";
+		boolean exist = dico.contient(motInexistant);
+		Assert.assertFalse("Le mot " + motInexistant + " ne devrait pas exister dans le dictionnaire", exist);
 	}
 
 }
