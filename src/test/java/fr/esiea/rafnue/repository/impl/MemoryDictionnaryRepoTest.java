@@ -1,7 +1,5 @@
 package fr.esiea.rafnue.repository.impl;
 
-import java.io.FileNotFoundException;
-
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -11,13 +9,13 @@ import org.junit.Test;
 public class MemoryDictionnaryRepoTest {
 	
 	@Test
-	public void testContructeur() throws FileNotFoundException {
+	public void testContructeur() {
 		MemoryDictionnaryRepo dico = MemoryDictionnaryRepo.getInstance();
 		Assert.assertNotNull("Aucune instance de MemoryDictionnaryRepo crée", dico);
 	}
 	
 	@Test
-	public void testContientMot() throws FileNotFoundException {
+	public void testContientMot() {
 		MemoryDictionnaryRepo dico = MemoryDictionnaryRepo.getInstance();
 		String motExistant = "bonjour";
 		boolean exist = dico.contient(motExistant);
@@ -25,7 +23,7 @@ public class MemoryDictionnaryRepoTest {
 	}
 	
 	@Test
-	public void testNeContientPas() throws FileNotFoundException {
+	public void testNeContientPas() {
 		MemoryDictionnaryRepo dico = MemoryDictionnaryRepo.getInstance();
 		String motExistant = "zzzzzzzzzzzz";
 		boolean exist = dico.contient(motExistant);
