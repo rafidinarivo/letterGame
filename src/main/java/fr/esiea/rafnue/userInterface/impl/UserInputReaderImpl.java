@@ -41,10 +41,6 @@ public class UserInputReaderImpl implements UserInputReader {
 				result = scanner.nextLine();
 			} catch (NoSuchElementException e) {
 				finDeSaisie = true;
-			} finally {
-				if (scanner != null) {
-					scanner.close();
-				}
 			}
 			
 			finDeSaisie = true;

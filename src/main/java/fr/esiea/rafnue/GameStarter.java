@@ -6,6 +6,9 @@ import fr.esiea.rafnue.userInterface.impl.UserInputReaderImpl;
 
 public class GameStarter {
 
+	/**
+	 * @param args
+	 */
 	public static void main(String[] args) {
 		System.out.println("Demarrage du jeux");
 		
