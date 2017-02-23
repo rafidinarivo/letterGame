@@ -11,7 +11,7 @@ public interface UserInputReader {
 	 * 
 	 * @return
 	 */
-	public String readSingleWord();
+	public String readSingleWord(String message);
 	
 	/**
 	 * Lecture de plusieurs mots

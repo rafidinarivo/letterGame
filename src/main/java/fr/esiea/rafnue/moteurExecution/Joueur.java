@@ -19,6 +19,10 @@ public class Joueur {
 		this.lettreUtilisateur = new ArrayList<>();
 	}
 	
+	public Character tirerLettre() {
+		return null;
+	}
+	
 	public void setNom(String nom) {
 		this.nom = nom;
 	}

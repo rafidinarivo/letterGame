@@ -6,19 +6,23 @@ import java.util.Scanner;
 import fr.esiea.rafnue.userInterface.UserInputReader;
 
 /**
- * Implementation par defaut
+ * Implementation par defaut (singleton)
  * 
  * @author lti
  *
  */
 public class UserInputReaderImpl implements UserInputReader {
+	
+	public static UserInputReaderImpl getInstance() {
+		return new UserInputReaderImpl();
+	}
 
 	public UserInputReaderImpl() {
 		super();
 	}
 
 	@Override
-	public String readSingleWord() {
+	public String readSingleWord(String message) {
 		Scanner scanner = null;
 		String result = null;
 		boolean finDeSaisie = false;
@@ -26,7 +30,7 @@ public class UserInputReaderImpl implements UserInputReader {
 		while (!finDeSaisie) {
 			try {
 				scanner = new Scanner(System.in);
-				System.out.println("Quel mot saissez-vous ? (Appuyer sur ENTREE pour ne rien saisir)");
+				System.out.println(message + " (Appuyer sur ENTREE pour ne rien saisir)");
 
 				boolean hasNext = scanner.hasNext();
 				
