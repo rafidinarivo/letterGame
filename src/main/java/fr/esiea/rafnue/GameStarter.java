@@ -1,4 +1,4 @@
-package fr.esiea;
+package fr.esiea.rafnue;
 
 public class GameStarter {
 

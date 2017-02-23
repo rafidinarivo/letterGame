@@ -4,6 +4,8 @@ import org.junit.Assert;
 
 import org.junit.Test;
 
+import fr.esiea.rafnue.GameStarter;
+
 public class GameStarterTest {
 	
 	@Test
