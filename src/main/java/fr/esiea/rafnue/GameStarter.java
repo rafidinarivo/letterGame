@@ -1,5 +1,8 @@
 package fr.esiea.rafnue;
 
+import java.awt.List;
+import java.util.ArrayList;
+
 import fr.esiea.rafnue.moteurExecution.Joueur;
 import fr.esiea.rafnue.userInterface.UserInputReader;
 import fr.esiea.rafnue.userInterface.impl.UserInputReaderImpl;
@@ -10,6 +13,7 @@ public class GameStarter {
 	 * @param args
 	 */
 	public static void main(String[] args) {
+		
 		System.out.println("Demarrage du jeux");
 		
 		// Lecture du nom des joueurs
@@ -41,5 +45,5 @@ public class GameStarter {
 		
 		System.out.println("Bienvenue à vous " + nomJoueur1 + " et " + nomJoueur2 + " dans cette nouvelle partie.");
 	}
-
+	
 }

@@ -53,3 +53,4 @@ public class LetterGenerator {
 		return (char)('A' + rdn.nextInt(NB_LETTER_ALPHABET));
 	}
 }
+
