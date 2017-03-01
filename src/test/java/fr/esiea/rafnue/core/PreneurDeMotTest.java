@@ -65,7 +65,7 @@ public class PreneurDeMotTest {
 		String motAJouter = MOTS_JOUEUR1[1];
 		String motAPrendre = MOTS_JOUEUR2[1];
 		j1.ajouterMotValide(motAJouter);
-		Assert.assertTrue("Le joueur 2 devrait avoir perdu le mot " + motAPrendre, !j2.getMotsValidseTrouves().contains(motAPrendre));
+		Assert.assertFalse("Le joueur 2 devrait avoir perdu le mot " + motAPrendre, j2.getMotsValidseTrouves().contains(motAPrendre));
 		Assert.assertTrue("Le joueur 2 devrait avoir perdu le mot " + motAPrendre, j2.getNombreDeMotValide() == (MOTS_JOUEUR2.length - 1));
 	}
 

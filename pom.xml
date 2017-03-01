@@ -31,7 +31,6 @@
 				<configuration>
 					<archive>
 						<manifest>
-<!-- 							<addClasspath>true</addClasspath> -->
 							<mainClass>fr.esiea.rafnue.GameStarter</mainClass>
 						</manifest>
 					</archive>
