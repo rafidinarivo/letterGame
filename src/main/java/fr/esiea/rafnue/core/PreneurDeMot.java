@@ -79,7 +79,7 @@ public class PreneurDeMot implements Observer {
 				
 				if (otherPart.length() == 1 || otherPartInDico) {
 					j.retirerMotValide(mot);
-					System.out.println(j.getNom() + " vient de perdre le mot " + mot);
+					System.out.println(j.getNom() + " vient de prendre le mot " + mot + " à son adversaire.");
 				}
 			}
 		}

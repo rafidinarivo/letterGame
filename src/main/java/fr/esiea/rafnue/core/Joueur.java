@@ -34,6 +34,12 @@ public class Joueur extends Observable {
 	
 	public void ajouterMotValide(String mot) {
 		this.motsValidseTrouves.add(mot);
+		setChanged();
+		notifyObservers(mot);
+	}
+	
+	public int getNombreDeMotValide() {
+		return this.motsValidseTrouves.size();
 	}
 	
 	public void ajouterLettreUtilisateur(Character lettre) {
@@ -45,6 +51,6 @@ public class Joueur extends Observable {
 	}
 
 	public List<String> getMotsValidseTrouves() {
-		return motsValidseTrouves;
+		return new ArrayList<String>(this.motsValidseTrouves);
 	}
 }
