@@ -50,7 +50,7 @@ public class LetterGenerator {
 	 * @return
 	 */
 	public Character generateLetter() {
-		return (char)('A' + rdn.nextInt(NB_LETTER_ALPHABET));
+		return (char)('a' + rdn.nextInt(NB_LETTER_ALPHABET));
 	}
 }
 

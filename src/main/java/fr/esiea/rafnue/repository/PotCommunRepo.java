@@ -7,11 +7,16 @@ package fr.esiea.rafnue.repository;
  * Est utilisé pour contenir des lettres utilisable pour des mots
  *
  */
-
 public interface PotCommunRepo {
 
-	void AjoutLettres(char a);
+	void ajoutLettre(char a);
 	
-	void ContientLettres(char b);
+	/**
+	 * Vérifie que le mot en paramètre est composé de lettres du pot
+	 * 
+	 * @param mot
+	 * @return
+	 */
+	boolean estComposeDeLettresDuPot(String mot);
 	
 }
