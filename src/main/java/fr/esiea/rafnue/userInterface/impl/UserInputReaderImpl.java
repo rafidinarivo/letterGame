@@ -30,7 +30,7 @@ public class UserInputReaderImpl implements UserInputReader {
 	public String readSingleWord(String message) {
 		String result = null;
 
-		System.out.println(message + " (Appuyer sur ENTREE pour ne rien saisir)");
+		System.out.println(message);
 
 		result = this.scanner.nextLine();
 		boolean aucuneSaisie = result.trim().equals("");

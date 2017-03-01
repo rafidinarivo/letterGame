@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Observable;
 
+import fr.esiea.rafnue.moteurExecution.LetterGenerator;
+
 /**
  * 
  * Represente un joueur
@@ -21,7 +23,10 @@ public class Joueur extends Observable {
 	}
 	
 	public Character tirerLettre() {
-		return null;
+		Character l = LetterGenerator.getInstance().generateLetter();
+		this.lettreUtilisateur.add(l);
+		System.out.println(this.nom + " a tiré la lettre " + l);
+		return l;
 	}
 	
 	public void setNom(String nom) {
@@ -53,4 +58,10 @@ public class Joueur extends Observable {
 	public List<String> getMotsValidseTrouves() {
 		return new ArrayList<String>(this.motsValidseTrouves);
 	}
+
+	public List<Character> getLettreUtilisateur() {
+		return new ArrayList<Character>(this.lettreUtilisateur);
+	}
+	
+	
 }
