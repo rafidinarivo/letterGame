@@ -1,9 +1,9 @@
 package fr.esiea.rafnue;
 
-import java.awt.List;
-import java.util.ArrayList;
-
 import fr.esiea.rafnue.core.Joueur;
+import fr.esiea.rafnue.core.PreneurDeMot;
+import fr.esiea.rafnue.repository.DictionnaryRepo;
+import fr.esiea.rafnue.repository.impl.MemoryDictionnaryRepo;
 import fr.esiea.rafnue.userInterface.UserInputReader;
 import fr.esiea.rafnue.userInterface.impl.UserInputReaderImpl;
 
@@ -27,6 +27,12 @@ public class GameStarter {
 		
 		// Acceuil des joueurs
 		acceuil(joueur1, joueur2);
+		
+		// Initialisation du dictionnaire
+		DictionnaryRepo dico = MemoryDictionnaryRepo.getInstance();
+		
+		// Creation du preneur de mot
+		new PreneurDeMot(joueur1, joueur2, dico);
 		
 		// Demander aux joueurs de tirer une lettre au hasard
 		Character lettreJoueur1 = joueur1.tirerLettre();
