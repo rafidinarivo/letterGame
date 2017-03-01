@@ -3,7 +3,7 @@ package fr.esiea.rafnue;
 import java.awt.List;
 import java.util.ArrayList;
 
-import fr.esiea.rafnue.moteurExecution.Joueur;
+import fr.esiea.rafnue.core.Joueur;
 import fr.esiea.rafnue.userInterface.UserInputReader;
 import fr.esiea.rafnue.userInterface.impl.UserInputReaderImpl;
 

@@ -1,13 +1,14 @@
-package fr.esiea.rafnue.moteurExecution;
+package fr.esiea.rafnue.core;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Observable;
 
 /**
  * 
  * Represente un joueur
  */
-public class Joueur {
+public class Joueur extends Observable {
 	
 	private String nom;
 	private List<String> motsValidseTrouves;
@@ -31,7 +32,7 @@ public class Joueur {
 		return this.nom;
 	}
 	
-	public void ajouterMot(String mot) {
+	public void ajouterMotValide(String mot) {
 		this.motsValidseTrouves.add(mot);
 	}
 	
@@ -39,7 +40,11 @@ public class Joueur {
 		this.lettreUtilisateur.add(lettre);
 	}
 	
-	public void retirerMot(String mot) {
+	public void retirerMotValide(String mot) {
 		this.motsValidseTrouves.remove(mot);
+	}
+
+	public List<String> getMotsValidseTrouves() {
+		return motsValidseTrouves;
 	}
 }

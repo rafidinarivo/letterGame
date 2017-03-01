@@ -67,6 +67,6 @@ public class MemoryDictionnaryRepo implements DictionnaryRepo {
 		if (motAValider == null)
 			return false;
 		
-		return this.words.contains(motAValider.trim());
+		return this.words.contains(motAValider.trim().toLowerCase());
 	}
 }
