@@ -1,7 +1,6 @@
 package fr.esiea.rafnue.repository.impl;
 
-import java.io.File;
-import java.net.URL;
+import java.io.InputStream;
 import java.util.HashSet;
 import java.util.Scanner;
 import java.util.Set;
@@ -36,12 +35,10 @@ public class MemoryDictionnaryRepo implements DictionnaryRepo {
 	 * Lecture du fichier dictionnaire
 	 */
 	private void init() {
-		URL url = getClass().getClassLoader().getResource(DICTIONNARY_FILE_NAME);
-		File dicoFile;
+		InputStream dicoFileStream = getClass().getClassLoader().getResourceAsStream(DICTIONNARY_FILE_NAME);
 		Scanner scanner = null;
 		try {
-			dicoFile = new File(url.toURI());
-			scanner = new Scanner(dicoFile);
+			scanner = new Scanner(dicoFileStream);
 		} catch (Exception e) {
 			throw new RuntimeException("Impossible de lire le fichier " + DICTIONNARY_FILE_NAME + " pour initialiser le dictionnaire", e);
 		}
