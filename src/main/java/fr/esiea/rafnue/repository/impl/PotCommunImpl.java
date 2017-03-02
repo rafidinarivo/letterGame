@@ -42,8 +42,7 @@ public class PotCommunImpl implements PotCommunRepo{
 		// toutes les lettres du mots qui sont contenues dans le pot commun
 		// On compte ensuite le nombre de lettre qui ont passé le filtre
 		// On retourne true si ce nombre est égale à la taille du mot en argument
-		 mot.chars().forEach(l -> System.out.println(l));
-		long nbFiltrer = mot.chars().filter(l -> this.pot.contains(l)).count();
+		long nbFiltrer = mot.chars().filter(l -> this.pot.contains((char)l)).count();
 		return nbFiltrer == mot.length();
 	}
 }
