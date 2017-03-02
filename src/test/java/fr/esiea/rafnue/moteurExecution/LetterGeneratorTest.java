@@ -8,8 +8,8 @@ import org.junit.Test;
  */
 public class LetterGeneratorTest {
 	
-	private static final char LETTRE_A_MAJUSCULE = 'A';
-	private static final char LETTRE_Z_MAJUSCULE = 'Z';
+	private static final char LETTRE_A_MINISCULE = 'a';
+	private static final char LETTRE_Z_MINISCULE = 'z';
 	
 	@Test
 	public void testConstruction() {
@@ -23,7 +23,7 @@ public class LetterGeneratorTest {
 		Character letter = letterGen.generateLetter();
 		Assert.assertNotNull("Aucune lettre générée par le générateur de lettre", letter);
 		
-		boolean lettreEntreAetZ = letter.compareTo(LETTRE_A_MAJUSCULE) >= 0 && letter.compareTo(LETTRE_Z_MAJUSCULE) <= 0;
+		boolean lettreEntreAetZ = letter.compareTo(LETTRE_A_MINISCULE) >= 0 && letter.compareTo(LETTRE_Z_MINISCULE) <= 0;
 		Assert.assertTrue("Attention la valeur générer n'est pas comprise entre a et z", lettreEntreAetZ);
 	}
 }
