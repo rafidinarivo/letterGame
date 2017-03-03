@@ -38,6 +38,9 @@ public class UserInputReaderImpl implements UserInputReader {
 		if (aucuneSaisie) {
 			System.out.println("Vous ne souhaitez rien saisir, confirmez-vous ce choix ? (Appuyer sur ENTREE pour valider ou saisissez votre mot)");
 			result = this.scanner.nextLine();
+			if (result.trim().equals("")) {
+				result =  null;
+			}
 		}
 		
 		return result;

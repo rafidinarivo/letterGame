@@ -19,4 +19,9 @@ public interface PotCommunRepo {
 	 */
 	boolean estComposeDeLettresDuPot(String mot);
 	
+	/**
+	 * Affiche le contenu du pot commun
+	 */
+	void affiche();
+	
 }

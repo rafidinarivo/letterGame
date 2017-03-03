@@ -38,9 +38,17 @@ public class Joueur extends Observable {
 	}
 	
 	public void ajouterMotValide(String mot) {
-		this.motsValidseTrouves.add(mot);
+		this.motsValidseTrouves.add(mot.toLowerCase());
 		setChanged();
 		notifyObservers(mot);
+	}
+	
+	public boolean aTrouve(String mot) {
+		return this.motsValidseTrouves.contains(mot);
+	}
+	
+	public void afficheMotValide(){
+		System.out.println("Les mots valides de " + this.nom + " sont : " + this.motsValidseTrouves);
 	}
 	
 	public int getNombreDeMotValide() {

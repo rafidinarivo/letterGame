@@ -59,27 +59,27 @@ public class PreneurDeMot implements Observer {
 	 * - L'un des mots de joueur j commence par motAPrendre
 	 * - Les autres caractères sont soit une lettre ou un autre mot valide
 	 * 
-	 * @param motAPrendre
+	 * @param motTrouve
 	 * @param j
 	 */
-	private void prendreMot(String motAPrendre, Joueur j) {
+	private void prendreMot(String motTrouve, Joueur j) {
 		List<String> motsJoueurs = j.getMotsValidseTrouves();
 		
 		if (motsJoueurs == null || motsJoueurs.isEmpty()) {
 			return;
 		}
 		
-		for (String mot : motsJoueurs) {
-			int indexOfMotAPrendre = mot.indexOf(motAPrendre);
+		for (String motAPrendre : motsJoueurs) {
+			boolean commenceParMotTrouve = motTrouve.startsWith(motAPrendre);
 			
-			if (indexOfMotAPrendre >= 0 && !motAPrendre.equalsIgnoreCase(mot)) {
-				int indexOfOtherPart = indexOfMotAPrendre + motAPrendre.length();
-				String otherPart = mot.substring(indexOfOtherPart);
+			if (commenceParMotTrouve && !motTrouve.equalsIgnoreCase(motAPrendre)) {
+				int indexOfOtherPart = motAPrendre.length();
+				String otherPart = motTrouve.substring(indexOfOtherPart);
 				boolean otherPartInDico = dico.contient(otherPart);
 				
 				if (otherPart.length() == 1 || otherPartInDico) {
-					j.retirerMotValide(mot);
-					System.out.println(j.getNom() + " vient de prendre le mot " + mot + " à son adversaire.");
+					j.retirerMotValide(motAPrendre);
+					System.out.println(j.getNom() + " vient de prendre le mot " + motAPrendre + " à son adversaire.");
 				}
 			}
 		}

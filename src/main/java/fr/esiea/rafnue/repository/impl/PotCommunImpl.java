@@ -31,8 +31,11 @@ public class PotCommunImpl implements PotCommunRepo{
 	@Override
 	public void ajoutLettre(char a) {
 		this.pot.add(a);
+	}
+	
+	public void affiche() {
 		System.out.println();
-		System.out.println("Nouvelle lettre ajouté au pot commun. Il contient mainenant les lettres : ");
+		System.out.println("Les lettres du pot commun sont les suivantes : ");
 		System.out.println(this.pot);
 	}
 	

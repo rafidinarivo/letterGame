@@ -8,8 +8,8 @@ import fr.esiea.rafnue.repository.impl.MemoryDictionnaryRepo;
 
 public class PreneurDeMotTest {
 	
-	private static final String[] MOTS_JOUEUR1 = {"abandonnai", "auto", "voiture"};
-	private static final String[] MOTS_JOUEUR2 = {"abandonnais", "automobile", "voiturette"};
+	private static final String[] MOTS_JOUEUR1 = {"abandonnais", "automobile", "voiturette"};
+	private static final String[] MOTS_JOUEUR2 = {"abandonnai", "auto", "voiture"};
 	
 	private Joueur j1 = new Joueur("j1");
 	private Joueur j2 = new Joueur("j2");

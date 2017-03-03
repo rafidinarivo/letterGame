@@ -27,13 +27,26 @@ public class GameStarter {
 		System.out.println("Bienvenue à vous " + nomJoueur1 + " et " + nomJoueur2 + " dans cette nouvelle partie.");
 	}
 	
+	public static String demanderNom(String message) {
+		UserInputReader reader = UserInputReaderImpl.getInstance();
+		String nom = "";
+		
+		boolean nomPasValide = true;
+		while (nomPasValide) {
+			nom = reader.readSingleWord(message);
+			nomPasValide = nom == null;
+		}
+		
+		return nom;
+	}
+	
 	public static void intialiserPartie() {
 		System.out.println("Demarrage du jeux");
 		
 		// Lecture du nom des joueurs
 		UserInputReader reader = UserInputReaderImpl.getInstance();
-		String nomJoueur1 = reader.readSingleWord("Joueur 1 merci de saisir votre nom");
-		String nomJoueur2 = reader.readSingleWord("Joueur 2 merci de saisir votre nom");
+		String nomJoueur1 = demanderNom("Joueur 1 merci de saisir votre nom");
+		String nomJoueur2 = demanderNom("Joueur 2 merci de saisir votre nom");
 		
 		// Creation des joueurs
 		Joueur joueur1 = new Joueur(nomJoueur1);
@@ -56,27 +69,48 @@ public class GameStarter {
 		joueur1.ajouterLettreUtilisateur(lettreJoueur1);
 		joueur2.ajouterLettreUtilisateur(lettreJoueur2);
 		
-		// Ajout des lettres dans le pot commun
+		// Création du pot commun
 		PotCommunRepo pot = PotCommunImpl.getInstance();
+		
+		// Ajout des lettres dans le pot commun
 		pot.ajoutLettre(lettreJoueur1);
 		pot.ajoutLettre(lettreJoueur2);
+		pot.affiche();
 		
 		// Determination du premier à commencer
 		Joueur joueurEnCours = trouvePremierADemarrer(joueur1, joueur2);
+		
+		Joueur adversaireJoueur;
+		if (joueurEnCours == joueur1) {
+			adversaireJoueur = joueur2;
+		} else {
+			adversaireJoueur = joueur1;
+		}
+		
 		boolean joueurEnCoursAGagne = false;
 		
+		String nomJoueurEnCours = "";
 		while (!joueurEnCoursAGagne) {
+			nomJoueurEnCours = joueurEnCours.getNom();
 			// On demarre un nouveau tour
-			System.out.println("C'est la tour du joueur " + joueurEnCours.getNom());
-			TourJoueur t = new TourJoueur(joueurEnCours, dico, reader, pot);
+			System.out.println("C'est le tour de " + nomJoueurEnCours);
+			TourJoueur t = new TourJoueur(joueurEnCours, adversaireJoueur, dico, reader, pot);
 			joueurEnCoursAGagne = t.demarrerTour();
 			
+			adversaireJoueur = joueurEnCours;
 			if (joueurEnCours == joueur1) {
 				joueurEnCours = joueur2;
 			} else {
 				joueurEnCours = joueur1;
 			}
+			
+			if (!joueurEnCoursAGagne) {
+				System.out.println("Fin du tour de " + nomJoueurEnCours);
+			}
+			
 		}
+		
+		System.out.println("Fin de la partie. " + nomJoueurEnCours + " a gagné !!!");
 	}
 	
 	/**
