@@ -5,6 +5,10 @@ Sami Nueilati
 # letterGame
 Projet 4A
 
+# Rapport
+
+Le rapport se trouve dans le répertoire "rapport"
+
 # Pour faire un build du projet
 
 1. Se postionner à la racine du projet
